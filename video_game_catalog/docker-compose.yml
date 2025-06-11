@@ -12,7 +12,7 @@ services:
 
   db:
     image: postgres:latest
-    restart: unless-stopped
+    restart: restart
     environment:
       POSTGRES_USER: test
       POSTGRES_PASSWORD: test
@@ -22,7 +22,7 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4
-    restart: unless-stopped
+    restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: admin
@@ -32,4 +32,4 @@ services:
       - db
 
 volumes:
-  db_data:
+  db_data: 
